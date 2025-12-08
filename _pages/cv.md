@@ -25,11 +25,6 @@ Research Experience
 ======
 * **PhD Thesis**, Radboud University (Dec 2020 – Nov 2025)  
   *Electromagnetic Counterparts of Gravitational Wave Sources*  
-  - Preparing for Gaia and MeerLICHT/BlackGEM optical searches for GW counterparts during O4  
-  - Host-galaxy identification and H₀ inference using WEAVE spectroscopy  
-  - Population studies of millisecond magnetars and fast X-ray transients  
-  - Links between FXTs and dark GRBs  
-  - Identifying BBH host galaxies with third-generation detector networks (ET, CE)
 
 * **Master’s Thesis**, Nikhef, Amsterdam (Sep 2019 – Aug 2020)  
   *Detecting Primordial Black Holes (PBHs) using Gravitational Waves*  
@@ -101,21 +96,3 @@ Languages
 * Hindi, French, Dutch — Intermediate  
 * **TOEFL iBT:** 113/120
 
-
-Publications
-======
-<ul>{% for post in site.publications reversed %}
-  {% include archive-single-cv.html %}
-{% endfor %}</ul>
-
-Talks
-======
-<ul>{% for post in site.talks reversed %}
-  {% include archive-single-talk-cv.html %}
-{% endfor %}</ul>
-
-Teaching
-======
-<ul>{% for post in site.teaching reversed %}
-  {% include archive-single-cv.html %}
-{% endfor %}</ul>
