@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Sumedha Biswas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#faf9f7;--bg2:#f2f0ec;--bg3:#e8e5df;
+  --ink:#1a1917;--ink-2:#3d3a36;--ink-3:#6b6760;--ink-4:#9e9b96;
+  --rule:#e2dfd9;--accent:#b5451b;--acc-lt:#fdf1ec;
+  --nav-h:60px;--max:900px;
+  --serif:'Lora',Georgia,serif;--sans:'Inter',system-ui,sans-serif;--mono:'DM Mono',monospace;
+}
+body{background:var(--bg);color:var(--ink);font-family:var(--serif);font-size:16px;font-weight:400;line-height:1.75;-webkit-font-smoothing:antialiased}
+::selection{background:#f8d9ce}
+::-webkit-scrollbar{width:3px}::-webkit-scrollbar-thumb{background:var(--bg3);border-radius:2px}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;height:var(--nav-h);background:rgba(250,249,247,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule)}
+.nav-inner{max-width:var(--max);margin:0 auto;height:100%;padding:0 2rem;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:var(--serif);font-size:1rem;font-weight:700;color:var(--ink);text-decoration:none}
+.nav-links{display:flex;list-style:none}
+.nav-links a{font-family:var(--sans);font-size:.78rem;color:var(--ink-3);text-decoration:none;padding:.3rem .8rem;border-radius:4px;transition:color .15s,background .15s}
+.nav-links a:hover{color:var(--ink);background:var(--bg2)}
+.nav-links a.active{color:var(--accent)}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 2rem}
+.page-top{padding-top:calc(var(--nav-h) + 3.5rem);padding-bottom:2.5rem;border-bottom:1px solid var(--rule);margin-bottom:3rem}
+.page-label{font-family:var(--sans);font-size:.7rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-4);margin-bottom:.5rem}
+h1{font-family:var(--serif);font-size:clamp(2rem,4vw,2.6rem);font-weight:700;letter-spacing:-.02em;color:var(--ink);line-height:1.15;margin-bottom:.4rem}
+.page-sub{font-family:var(--sans);font-size:.88rem;color:var(--ink-4)}
+h2{font-family:var(--serif);font-size:1.1rem;font-weight:700;letter-spacing:-.01em;color:var(--ink);margin-bottom:1.2rem;margin-top:2.8rem;padding-top:2.2rem;border-top:1px solid var(--rule)}
+h2.first{border-top:none;padding-top:0;margin-top:0}
+h3{font-family:var(--serif);font-size:.9375rem;font-weight:700;color:var(--ink);line-height:1.4;margin-bottom:.25rem}
+p{color:var(--ink-2);line-height:1.82;margin-bottom:1rem;font-size:.9375rem}
+p:last-child{margin-bottom:0}
+strong{color:var(--ink);font-weight:600}
+.btn{font-family:var(--sans);font-size:.78rem;font-weight:500;text-decoration:none;padding:.55rem 1.2rem;border-radius:5px;border:1px solid var(--rule);color:var(--ink-2);background:var(--bg);transition:all .15s;cursor:pointer;display:inline-flex;align-items:center;gap:.3rem}
+.btn:hover{border-color:var(--ink-3);color:var(--ink);background:var(--bg2)}
+.btn.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+.btn.primary:hover{background:#9a3a16;border-color:#9a3a16}
+footer{padding:2rem 0;border-top:1px solid var(--rule);display:flex;justify-content:space-between;align-items:center;margin-top:4rem}
+.foot-l{font-family:var(--serif);font-size:.82rem;color:var(--ink-3)}
+.foot-r{font-family:var(--sans);font-size:.7rem;color:var(--ink-4);display:flex;gap:.8rem}
+.foot-r a{color:var(--ink-4);text-decoration:none;transition:color .15s}
+.foot-r a:hover{color:var(--accent)}
+@media(max-width:640px){.nav-links a{padding:.3rem .5rem;font-size:.72rem}footer{flex-direction:column;gap:.5rem;text-align:center}}
+
+.about-cols{display:grid;grid-template-columns:150px 1fr;gap:3rem;align-items:start}
+.photo-box{aspect-ratio:3/4;background:var(--bg2);border:1px solid var(--rule);border-radius:6px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;color:var(--ink-4);font-family:var(--sans);font-size:.62rem;text-align:center;margin-bottom:1.2rem}
+.side-links{display:flex;flex-direction:column}
+.side-link{font-family:var(--sans);font-size:.72rem;color:var(--ink-3);text-decoration:none;padding:.4rem 0;border-bottom:1px solid var(--rule);display:flex;align-items:center;justify-content:space-between;transition:color .15s}
+.side-link:first-child{border-top:1px solid var(--rule)}
+.side-link:hover{color:var(--accent)}
+.side-link::after{content:'↗';opacity:.4;font-size:.65rem}
+.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:1.5rem}
+.skill-group h3{font-family:var(--sans);font-size:.68rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-4);margin-bottom:.7rem}
+.skill-group li{font-family:var(--sans);font-size:.8rem;color:var(--ink-3);list-style:none;padding:.2rem 0;border-bottom:1px solid var(--rule)}
+.skill-group li:last-child{border-bottom:none}
+.collab-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:6px;overflow:hidden;margin-top:1.5rem}
+.collab-item{background:var(--bg);padding:1rem 1.3rem}
+.collab-name{font-size:.875rem;font-weight:600;color:var(--ink);margin-bottom:.15rem}
+.collab-period{font-family:var(--sans);font-size:.68rem;color:var(--ink-4)}
+.talk-list{display:flex;flex-direction:column;margin-top:1.5rem}
+.talk-row{display:grid;grid-template-columns:70px 1fr auto;gap:1rem;padding:.85rem 0;border-bottom:1px solid var(--rule);align-items:baseline}
+.talk-row:first-child{border-top:1px solid var(--rule)}
+.talk-date{font-family:var(--sans);font-size:.68rem;color:var(--ink-4)}
+.talk-title{font-size:.875rem;font-weight:600;color:var(--ink);margin-bottom:.1rem}
+.talk-venue{font-family:var(--sans);font-size:.78rem;color:var(--ink-4)}
+.tbadge{font-family:var(--sans);font-size:.62rem;font-weight:500;padding:.18rem .5rem;border-radius:20px;border:1px solid var(--rule);color:var(--ink-3);white-space:nowrap}
+.tbadge.inv{color:var(--accent);background:var(--acc-lt);border-color:#f0b9a5}
+.outreach-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:6px;overflow:hidden;margin-top:1.5rem}
+.outreach-item{background:var(--bg);padding:1.2rem 1.4rem}
+.outreach-item h3{font-size:.875rem;font-weight:700;margin-bottom:.3rem}
+.outreach-item p{font-family:var(--sans);font-size:.78rem;color:var(--ink-3);line-height:1.65;margin-bottom:0}
+@media(max-width:700px){
+  .about-cols{grid-template-columns:1fr}
+  .skills-grid,.collab-grid,.outreach-grid{grid-template-columns:1fr}
+  .talk-row{grid-template-columns:60px 1fr}.tbadge{display:none}
+}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">Sumedha Biswas</a>
+    <ul class="nav-links"><li><a href="../about/index.html"  class="active">About</a></li><li><a href="../research/index.html" >Research</a></li><li><a href="../code/index.html" >Code</a></li><li><a href="../writing/index.html" >Writing</a></li><li><a href="../contact/index.html" >Contact</a></li></ul>
+  </div>
+</nav>
+<div class="wrap">
+
+  <div class="page-top">
+    <p class="page-label">About</p>
+    <h1>Background</h1>
+    <p class="page-sub">PhD Candidate in Astrophysics &middot; Radboud University, Nijmegen &middot; Defense May 2026</p>
+  </div>
+
+  <div class="about-cols">
+    <div>
+      <div class="photo-box">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" opacity="0.3"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        <span>Photo<br>coming soon</span>
+      </div>
+      <div class="side-links">
+        <a href="mailto:sumedha.biswas@ru.nl" class="side-link">Email</a>
+        <a href="https://github.com/sumedhabiswas" class="side-link" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/sumedha-biswas" class="side-link" target="_blank">LinkedIn</a>
+        <a href="https://ui.adsabs.harvard.edu/search/q=author%3ABiswas%2C+Sumedha" class="side-link" target="_blank">NASA ADS</a>
+        <a href="https://orcid.org/0000-0002-4812-0440" class="side-link" target="_blank">ORCID</a>
+      </div>
+    </div>
+    <div>
+      <p>My research sits at the intersection of gravitational wave physics and time-domain astronomy. I build the observational infrastructure to find electromagnetic counterparts of compact binary mergers &mdash; designing follow-up strategies for wide-field surveys like Gaia and BlackGEM, developing statistical methods to identify the host galaxies of binary mergers, and turning those identifications into constraints on the Hubble constant.</p>
+      <p>I helped commission the BlackGEM telescope array at ESO La Silla, Chile, and have been a member of the <strong>LIGO&ndash;Virgo&ndash;KAGRA Collaboration</strong> since 2019. My work also spans <strong>ESA Gaia DPAC</strong>, the <strong>BlackGEM Consortium</strong>, and <strong>ENGRAVE</strong>.</p>
+      <p>Outside astrophysics, I am working toward a move into space systems. The toolkit of GW data analysis &mdash; Bayesian inference, signal processing at the noise floor, large-scale simulation, HPC pipelines &mdash; is directly applicable to problems in mission analysis, GNC, and space instrumentation, and I am building hands-on astrodynamics experience to complement it.</p>
+    </div>
+  </div>
+
+  <h2 class="first" style="margin-top:3rem;padding-top:2.5rem;border-top:1px solid var(--rule)">Technical skills</h2>
+  <div class="skills-grid">
+    <div class="skill-group"><h3>GW &amp; Astrophysics</h3><ul><li>LALSuite, Bilby</li><li>GW data analysis</li><li>Einstein Toolkit, MESA</li><li>Optical transient pipelines</li><li>Bayesian inference / MCMC</li></ul></div>
+    <div class="skill-group"><h3>Aerospace / Orbital</h3><ul><li>Two-body, n-body dynamics</li><li>Lambert&rsquo;s problem</li><li>Poliastro, GMAT</li><li>Trajectory &amp; mission analysis</li><li>Porkchop plots</li></ul></div>
+    <div class="skill-group"><h3>Computing</h3><ul><li>Python (primary)</li><li>C++, FORTRAN</li><li>HPC / HTCondor</li><li>Unix, LaTeX</li><li>MATLAB, Mathematica</li></ul></div>
+  </div>
+
+  <h2>Collaborations</h2>
+  <div class="collab-grid">
+    <div class="collab-item"><div class="collab-name">LIGO&ndash;Virgo&ndash;KAGRA Collaboration</div><div class="collab-period">Sep 2019 &mdash; Present</div></div>
+    <div class="collab-item"><div class="collab-name">ESA Gaia DPAC</div><div class="collab-period">Apr 2021 &mdash; Present</div></div>
+    <div class="collab-item"><div class="collab-name">BlackGEM Consortium</div><div class="collab-period">Dec 2020 &mdash; Present</div></div>
+    <div class="collab-item"><div class="collab-name">ENGRAVE</div><div class="collab-period">Dec 2020 &mdash; Present</div></div>
+  </div>
+
+  <h2>Talks &amp; conferences</h2>
+  <div class="talk-list">
+    <div class="talk-row"><div class="talk-date">Mar 2026</div><div><div class="talk-title">Indian Institute of Astrophysics Seminar</div><div class="talk-venue">Bangalore, India</div></div><span class="tbadge inv">Invited</span></div>
+    <div class="talk-row"><div class="talk-date">Sep 2025</div><div><div class="talk-title">Lorentz Center &mdash; Shedding Light on Dark Sirens</div><div class="talk-venue">Leiden, The Netherlands</div></div><span class="tbadge">Talk</span></div>
+    <div class="talk-row"><div class="talk-date">Jul 2023</div><div><div class="talk-title">European Astronomical Society Annual Meeting</div><div class="talk-venue">Krak&oacute;w, Poland</div></div><span class="tbadge">Session Chair</span></div>
+    <div class="talk-row"><div class="talk-date">Jun 2022</div><div><div class="talk-title">GW-EM Workshop, Weizmann Institute of Science</div><div class="talk-venue">Rehovot, Israel</div></div><span class="tbadge inv">Invited</span></div>
+    <div class="talk-row"><div class="talk-date">Nov 2021</div><div><div class="talk-title">Gaia Alerts Workshop</div><div class="talk-venue">Hersonissos, Greece</div></div><span class="tbadge">Accepted Talk</span></div>
+    <div class="talk-row"><div class="talk-date">Aug 2021</div><div><div class="talk-title">ZTF Summer School</div><div class="talk-venue">Caltech, Pasadena CA</div></div><span class="tbadge">Selected</span></div>
+    <div class="talk-row"><div class="talk-date">Mar 2020</div><div><div class="talk-title">J&uuml;rgen Ehlers Spring School</div><div class="talk-venue">Albert Einstein Institute, Potsdam</div></div><span class="tbadge inv">Invited</span></div>
+  </div>
+
+  <h2>Outreach</h2>
+  <div class="outreach-grid">
+    <div class="outreach-item"><h3>BlackHoleFinder</h3><p>Core development team for the BlackGEM citizen science app, enabling public classification of survey data.</p></div>
+    <div class="outreach-item"><h3>LIGO Open Data Workshops</h3><p>Organised and mentored 500+ students at LIGO/Virgo Open Data Workshop tutorial sessions, 2020 and 2021.</p></div>
+    <div class="outreach-item"><h3>Quanta Magazine</h3><p>Science writing for Quanta Magazine (2019), communicating frontier physics to a general science audience.</p></div>
+    <div class="outreach-item"><h3>Public Talks</h3><p>Talks at Naxxatra, and science fairs at Jawaharlal Nehru Planetarium, Bangalore (2015&ndash;2018).</p></div>
+  </div>
+
+
+  <footer>
+    <span class="foot-l">© 2026 Sumedha Biswas</span>
+    <div class="foot-r">
+      <a href="https://github.com/sumedhabiswas" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/sumedha-biswas" target="_blank">LinkedIn</a>
+      <a href="https://ui.adsabs.harvard.edu/search/q=author%3ABiswas%2C+Sumedha" target="_blank">NASA ADS</a>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

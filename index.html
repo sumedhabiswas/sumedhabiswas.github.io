@@ -3,1002 +3,188 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sumedha Biswas — Astrophysicist · Multi-Messenger Astronomy & Space Mission Science</title>
+<title>Sumedha Biswas — Astrophysicist</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
-
 :root {
-  --paper:    #f7f4ef;
-  --paper2:   #f0ece3;
-  --paper3:   #e8e2d7;
-  --ink:      #1c1917;
-  --ink-2:    #44403c;
-  --ink-3:    #78716c;
-  --ink-4:    #a8a29e;
-  --rule:     rgba(28,25,23,0.10);
-  --rule-2:   rgba(28,25,23,0.18);
-  --accent:   #b5451b;
-  --accent-2: #8a3314;
-  --accent-bg: rgba(181,69,27,0.06);
-  --nav-h:    60px;
-  --max-w:    1120px;
-  --serif:    'Fraunces', Georgia, serif;
-  --sans:     'Inter', system-ui, sans-serif;
-  --mono:     'DM Mono', 'Courier New', monospace;
+  --bg: #faf9f7; --bg2: #f2f0ec; --bg3: #e8e5df;
+  --ink: #1a1917; --ink-2: #3d3a36; --ink-3: #6b6760; --ink-4: #9e9b96;
+  --rule: #e2dfd9; --accent: #b5451b; --acc-lt: #fdf1ec;
+  --nav-h: 60px; --max: 900px;
+  --serif: 'Lora', Georgia, serif;
+  --sans: 'Inter', system-ui, sans-serif;
+  --mono: 'DM Mono', monospace;
 }
-
-body {
-  background: var(--paper);
-  color: var(--ink);
-  font-family: var(--sans);
-  font-size: 15px;
-  font-weight: 400;
-  line-height: 1.7;
-  overflow-x: hidden;
-}
-
-::selection { background: rgba(181,69,27,0.12); }
+body { background: var(--bg); color: var(--ink); font-family: var(--serif);
+  font-size: 16px; font-weight: 400; line-height: 1.75;
+  -webkit-font-smoothing: antialiased; }
+::selection { background: #f8d9ce; }
 ::-webkit-scrollbar { width: 3px; }
-::-webkit-scrollbar-track { background: var(--paper2); }
-::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 2px; }
+::-webkit-scrollbar-thumb { background: var(--bg3); border-radius: 2px; }
 
-/* ── NAV ── */
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
-  height: var(--nav-h);
-  background: rgba(247,244,239,0.94);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--rule-2);
-}
-
-.nav-inner {
-  max-width: var(--max-w); margin: 0 auto;
-  height: 100%; padding: 0 2.5rem;
-  display: flex; align-items: center; justify-content: space-between;
-}
-
-.nav-logo {
-  font-family: var(--serif);
-  font-size: 1rem;
-  font-weight: 400;
-  font-style: italic;
-  color: var(--ink);
-  text-decoration: none;
-  letter-spacing: 0.01em;
-}
-
-.nav-logo strong {
-  font-style: normal;
-  font-weight: 500;
-  color: var(--accent);
-}
-
-.nav-links { display: flex; list-style: none; gap: 0; height: 100%; }
-
-.nav-links a {
-  font-family: var(--mono);
-  font-size: 0.62rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--ink-3);
-  text-decoration: none;
-  padding: 0 1.1rem;
-  height: 100%;
-  display: flex; align-items: center;
-  border-left: 1px solid var(--rule);
-  transition: color 0.18s, background 0.18s;
-}
-
-.nav-links li:last-child a { border-right: 1px solid var(--rule); }
-.nav-links a:hover { color: var(--accent); background: var(--accent-bg); }
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  height: var(--nav-h); background: rgba(250,249,247,0.94);
+  backdrop-filter: blur(8px); border-bottom: 1px solid var(--rule); }
+.nav-inner { max-width: var(--max); margin: 0 auto; height: 100%;
+  padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; }
+.nav-logo { font-family: var(--serif); font-size: 1rem; font-weight: 700;
+  color: var(--ink); text-decoration: none; letter-spacing: -0.01em; }
+.nav-links { display: flex; list-style: none; gap: 0; }
+.nav-links a { font-family: var(--sans); font-size: 0.78rem; font-weight: 400;
+  color: var(--ink-3); text-decoration: none; padding: 0.3rem 0.8rem;
+  border-radius: 4px; transition: color 0.15s, background 0.15s; }
+.nav-links a:hover { color: var(--ink); background: var(--bg2); }
 .nav-links a.active { color: var(--accent); }
 
-/* ── HERO ── */
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 2rem; }
+
+/* HERO */
 #hero {
   min-height: 100vh;
   padding-top: var(--nav-h);
-  max-width: var(--max-w);
-  margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 420px;
-  border-left: 1px solid var(--rule-2);
-  border-right: 1px solid var(--rule-2);
+  grid-template-columns: 1fr 320px;
+  gap: 4rem;
+  align-items: center;
 }
 
-.hero-left {
-  padding: 5rem 3.5rem 4rem;
-  border-right: 1px solid var(--rule-2);
-  display: flex; flex-direction: column;
-}
+.hero-text {}
 
-.hero-kicker {
-  font-family: var(--mono);
-  font-size: 0.62rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 2rem;
-  display: flex; align-items: center; gap: 0.8rem;
-}
-
-.hero-kicker::before {
-  content: '';
-  width: 24px; height: 1px;
-  background: var(--accent);
-  flex-shrink: 0;
-}
-
-h1.hero-name {
-  font-family: var(--serif);
-  font-size: clamp(3.6rem, 7vw, 6rem);
-  font-weight: 300;
-  font-style: italic;
-  line-height: 0.95;
-  letter-spacing: -0.02em;
-  color: var(--ink);
-  margin-bottom: 1.8rem;
-}
-
-h1.hero-name em {
-  font-style: normal;
-  color: var(--accent);
-}
-
-.hero-discipline {
-  font-size: 1rem;
-  font-weight: 400;
-  color: var(--ink-2);
-  line-height: 1.55;
-  margin-bottom: 2rem;
-  padding-bottom: 2rem;
-  border-bottom: 1px solid var(--rule-2);
-  max-width: 420px;
-}
-
-.hero-body {
-  font-size: 0.93rem;
-  color: var(--ink-3);
-  line-height: 1.8;
-  margin-bottom: 2.5rem;
-  max-width: 440px;
-}
-
-.hero-body strong { color: var(--ink); font-weight: 500; }
-
-.hero-ctas { display: flex; gap: 0; margin-bottom: auto; }
-
-.btn {
-  font-family: var(--mono);
-  font-size: 0.62rem;
+.hero-eyebrow {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  text-decoration: none;
-  padding: 0.7rem 1.4rem;
-  border: 1px solid var(--rule-2);
+  color: var(--accent);
+  margin-bottom: 1.2rem;
+}
+
+h1 {
+  font-family: var(--serif);
+  font-size: clamp(2.4rem, 5vw, 3.4rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  line-height: 1.1;
+  margin-bottom: 1.4rem;
+}
+
+.hero-bio {
+  font-size: 1rem;
   color: var(--ink-2);
-  transition: all 0.18s;
-  background: transparent;
-  cursor: pointer;
+  line-height: 1.82;
+  max-width: 500px;
+  margin-bottom: 2rem;
 }
 
-.btn + .btn { border-left: none; }
-.btn:hover { background: var(--paper2); color: var(--ink); border-color: var(--rule-2); }
-.btn.primary { background: var(--accent); color: var(--paper); border-color: var(--accent); }
-.btn.primary:hover { background: var(--accent-2); border-color: var(--accent-2); }
+.hero-bio p + p { margin-top: 0.8rem; }
 
-.hero-stats {
-  display: flex; gap: 2.5rem;
-  padding-top: 2.5rem;
-  border-top: 1px solid var(--rule-2);
-  margin-top: 3rem;
+/* three identity pills */
+.identity-row {
+  display: flex; flex-wrap: wrap; gap: 0.5rem;
+  margin-bottom: 2rem;
 }
 
-.stat { display: flex; flex-direction: column; }
+.id-pill {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--ink-3);
+  background: var(--bg2);
+  border: 1px solid var(--rule);
+  padding: 0.3rem 0.75rem;
+  border-radius: 20px;
+  letter-spacing: 0.01em;
+}
+
+.id-pill.hi { color: var(--accent); background: var(--acc-lt); border-color: #f0b9a5; }
+
+.hero-nav {
+  display: flex; flex-wrap: wrap; gap: 0.5rem;
+  margin-bottom: 3rem;
+}
+
+.btn {
+  font-family: var(--sans); font-size: 0.78rem; font-weight: 500;
+  text-decoration: none; padding: 0.55rem 1.2rem; border-radius: 5px;
+  border: 1px solid var(--rule); color: var(--ink-2); background: var(--bg);
+  transition: all 0.15s; cursor: pointer;
+  display: inline-flex; align-items: center; gap: 0.3rem;
+}
+.btn:hover { border-color: var(--ink-3); color: var(--ink); background: var(--bg2); }
+.btn.primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+.btn.primary:hover { background: #9a3a16; border-color: #9a3a16; }
+
+/* stats */
+.stats-row {
+  display: flex; gap: 2.5rem; flex-wrap: wrap;
+  padding-top: 2rem;
+  border-top: 1px solid var(--rule);
+}
+
+.stat { display: flex; flex-direction: column; gap: 0.2rem; }
 
 .stat-n {
   font-family: var(--serif);
-  font-size: 2.4rem;
-  font-weight: 300;
-  font-style: italic;
-  color: var(--accent);
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--ink);
   line-height: 1;
-  margin-bottom: 0.25rem;
 }
 
 .stat-l {
-  font-family: var(--mono);
-  font-size: 0.55rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--ink-3);
-  line-height: 1.5;
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  color: var(--ink-4);
+  line-height: 1.4;
 }
 
-/* ── HERO RIGHT — canvas ── */
-.hero-right {
+/* canvas panel */
+.hero-canvas-wrap {
   position: relative;
   background: var(--ink);
+  border-radius: 10px;
   overflow: hidden;
-  min-height: 480px;
+  aspect-ratio: 2/3;
+  align-self: center;
 }
 
 canvas#gw { position: absolute; inset: 0; width: 100%; height: 100%; }
 
-.ann-tl, .ann-br {
-  position: absolute;
+.canvas-caption {
+  position: absolute; bottom: 1rem; left: 1rem; right: 1rem;
   font-family: var(--mono);
-  font-size: 0.52rem;
+  font-size: 0.5rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  line-height: 2;
+  color: rgba(250,249,247,0.25);
+  line-height: 1.9;
   pointer-events: none;
 }
 
-.ann-tl { top: 1.2rem; left: 1.2rem; color: rgba(247,244,239,0.28); }
-.ann-br { bottom: 1.2rem; right: 1.2rem; text-align: right; color: rgba(247,244,239,0.28); }
-
-/* corner bracket marks */
-.hero-right::before, .hero-right::after {
-  content: '';
-  position: absolute; width: 14px; height: 14px;
-  border-color: rgba(247,244,239,0.22); border-style: solid;
-  z-index: 2;
-}
-.hero-right::before { top: 10px; left: 10px; border-width: 1px 0 0 1px; }
-.hero-right::after  { bottom: 10px; right: 10px; border-width: 0 1px 1px 0; }
-
-/* ── PAGE COLUMN ── */
-.page-col {
-  max-width: var(--max-w); margin: 0 auto;
-  border-left: 1px solid var(--rule-2);
-  border-right: 1px solid var(--rule-2);
-}
-
-/* ── SECTION HEADER ── */
-.sec-hd {
-  display: grid;
-  grid-template-columns: 80px 1fr;
-  border-top: 1px solid var(--rule-2);
-  border-bottom: 1px solid var(--rule-2);
-  background: var(--paper2);
-  align-items: stretch;
-}
-
-.sec-n {
-  font-family: var(--serif);
-  font-size: 0.72rem;
-  font-style: italic;
-  color: var(--accent);
-  padding: 1rem 1.4rem;
-  border-right: 1px solid var(--rule-2);
-  display: flex; align-items: center;
-  font-weight: 300;
-}
-
-.sec-t {
-  padding: 1rem 2rem;
-  display: flex; align-items: baseline; gap: 1.2rem;
-}
-
-h2.sec-title {
-  font-family: var(--serif);
-  font-size: clamp(1.2rem, 2.8vw, 1.7rem);
-  font-weight: 300;
-  font-style: italic;
-  color: var(--ink);
-  line-height: 1.15;
-}
-
-.sec-sub {
-  font-family: var(--mono);
-  font-size: 0.58rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--ink-4);
-}
-
-/* ── SUBSECTION DIVIDER ── */
-.subsec-bar {
-  display: flex; align-items: center; gap: 1.2rem;
-  padding: 0.7rem 2rem;
-  border-bottom: 1px solid var(--rule);
-  background: var(--paper2);
-}
-
-.subsec-label {
-  font-family: var(--mono);
-  font-size: 0.58rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  white-space: nowrap;
-}
-
-.subsec-bar hr {
-  flex: 1; border: none;
-  border-top: 1px solid var(--rule-2);
-}
-
-.subsec-note {
-  font-family: var(--mono);
-  font-size: 0.54rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--ink-4);
-  white-space: nowrap;
-}
-
-/* ── ABOUT ── */
-.about-body {
-  display: grid;
-  grid-template-columns: 176px 1fr;
-}
-
-.about-side {
-  border-right: 1px solid var(--rule-2);
-  padding: 2.5rem 1.5rem;
-  display: flex; flex-direction: column; gap: 2rem;
-  background: var(--paper2);
-}
-
-.photo-box {
-  aspect-ratio: 3/4;
-  background: var(--paper3);
-  border: 1px solid var(--rule-2);
-  display: flex; flex-direction: column;
-  align-items: center; justify-content: center;
-  gap: 0.5rem;
-  color: var(--ink-4);
-  font-family: var(--mono);
-  font-size: 0.55rem;
-  letter-spacing: 0.08em;
-  text-align: center;
-}
-
-.side-links { display: flex; flex-direction: column; gap: 0; }
-
-.side-link {
-  font-family: var(--mono);
-  font-size: 0.6rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--ink-3);
-  text-decoration: none;
-  padding: 0.55rem 0;
-  border-bottom: 1px solid var(--rule);
-  display: flex; align-items: center; justify-content: space-between;
-  transition: color 0.18s;
-}
-
-.side-link:first-child { border-top: 1px solid var(--rule); }
-.side-link:hover { color: var(--accent); }
-.side-link::after { content: '↗'; font-size: 0.6rem; opacity: 0.5; }
-
-.about-main { padding: 2.5rem 3rem; }
-
-.about-main p {
-  font-size: 0.95rem;
-  color: var(--ink-2);
-  line-height: 1.82;
-  margin-bottom: 1.1rem;
-}
-
-.about-main p strong { color: var(--ink); font-weight: 500; }
-.about-main p:last-of-type { margin-bottom: 0; }
-
-.skills-block {
-  margin-top: 2.2rem;
-  border: 1px solid var(--rule-2);
-}
-
-.skills-block-hd {
-  padding: 0.6rem 1.2rem;
-  border-bottom: 1px solid var(--rule-2);
-  font-family: var(--mono);
-  font-size: 0.58rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--ink-3);
-  background: var(--paper2);
-}
-
-.skills-cols {
-  display: grid; grid-template-columns: repeat(3, 1fr);
-}
-
-.skills-col {
-  padding: 1.2rem;
-  border-right: 1px solid var(--rule);
-}
-
-.skills-col:last-child { border-right: none; }
-
-.skills-col h4 {
-  font-family: var(--mono);
-  font-size: 0.58rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 0.7rem;
-}
-
-.skills-col ul { list-style: none; }
-
-.skills-col li {
-  font-size: 0.82rem;
-  color: var(--ink-3);
-  padding: 0.22rem 0;
-  border-bottom: 1px solid var(--rule);
-  display: flex; align-items: center; gap: 0.5rem;
-}
-
-.skills-col li:last-child { border-bottom: none; }
-
-.skills-col li::before {
-  content: '';
-  width: 3px; height: 3px;
-  border-radius: 50%;
-  background: var(--accent);
-  flex-shrink: 0;
-  opacity: 0.5;
-}
-
-/* ── PROJECTS ── */
-.proj-grid {
-  display: grid; grid-template-columns: 1fr 1fr;
-}
-
-.proj-item {
-  padding: 2.2rem 2.5rem;
-  border-right: 1px solid var(--rule-2);
-  border-bottom: 1px solid var(--rule-2);
-  transition: background 0.18s;
-}
-
-.proj-item:nth-child(even) { border-right: none; }
-.proj-item:nth-last-child(-n+2) { border-bottom: none; }
-.proj-item:hover { background: var(--paper2); }
-
-.proj-n {
-  font-family: var(--mono);
-  font-size: 0.58rem;
-  letter-spacing: 0.14em;
-  color: var(--accent);
-  margin-bottom: 0.7rem;
-  opacity: 0.7;
-}
-
-.proj-item h3 {
-  font-family: var(--serif);
-  font-size: 1.05rem;
-  font-weight: 400;
-  font-style: italic;
-  color: var(--ink);
-  margin-bottom: 0.6rem;
-  line-height: 1.3;
-}
-
-.proj-item p {
-  font-size: 0.85rem;
-  color: var(--ink-3);
-  line-height: 1.75;
-}
-
-/* Aerospace cards */
-.aero-intro-text {
-  padding: 1.8rem 2.5rem;
-  border-bottom: 1px solid var(--rule-2);
-  font-size: 0.9rem;
-  color: var(--ink-3);
-  line-height: 1.8;
-  max-width: 680px;
-}
-
-.aero-intro-text strong { color: var(--ink); font-weight: 500; }
-
-.aero-cards {
-  display: grid; grid-template-columns: repeat(3, 1fr);
-  border-bottom: 1px solid var(--rule-2);
-}
-
-.aero-card {
-  padding: 2rem 2.2rem;
-  border-right: 1px solid var(--rule-2);
-  transition: background 0.18s;
-}
-
-.aero-card:last-child { border-right: none; }
-.aero-card:hover { background: var(--paper2); }
-
-.aero-card-status {
-  font-family: var(--mono);
-  font-size: 0.56rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 0.7rem;
-  display: flex; align-items: center; gap: 0.45rem;
-}
-
-.status-pip {
-  width: 5px; height: 5px; border-radius: 50%;
-  background: var(--accent); flex-shrink: 0;
-  animation: pip 2.2s ease-in-out infinite;
-}
-
-@keyframes pip { 0%, 100% { opacity: 1; } 50% { opacity: 0.2; } }
-
-.aero-card h3 {
-  font-family: var(--serif);
-  font-size: 1rem;
-  font-weight: 400;
-  font-style: italic;
-  color: var(--ink);
-  margin-bottom: 0.6rem;
-  line-height: 1.3;
-}
-
-.aero-card p { font-size: 0.82rem; color: var(--ink-3); line-height: 1.7; margin-bottom: 0.9rem; }
-
-.aero-tags { display: flex; flex-wrap: wrap; gap: 0.3rem; }
-
-.aero-tag {
-  font-family: var(--mono);
-  font-size: 0.56rem;
-  letter-spacing: 0.07em;
-  padding: 0.15rem 0.5rem;
-  border: 1px solid var(--rule-2);
-  color: var(--ink-3);
-  border-radius: 2px;
-}
-
-/* ── PUBLICATIONS ── */
-.pub-entry {
-  display: grid; grid-template-columns: 96px 1fr;
-  border-bottom: 1px solid var(--rule-2);
-  transition: background 0.18s;
-}
-
-.pub-entry:hover { background: var(--paper2); }
-.pub-entry:last-child { border-bottom: none; }
-
-.pub-meta {
-  padding: 2rem 1.2rem;
-  border-right: 1px solid var(--rule-2);
-  background: var(--paper2);
-  display: flex; flex-direction: column; gap: 0.5rem;
-}
-
-.pub-year {
-  font-family: var(--serif);
-  font-size: 1rem;
-  font-weight: 300;
-  font-style: italic;
-  color: var(--accent);
-}
-
-.pub-badge {
-  font-family: var(--mono);
-  font-size: 0.54rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  padding: 0.15rem 0.4rem;
-  border: 1px solid;
-  display: inline-block;
-  border-radius: 1px;
-}
-
-.pub-badge.pub  { color: var(--accent);  border-color: rgba(181,69,27,0.3); }
-.pub-badge.sub  { color: var(--ink-2);   border-color: var(--rule-2); }
-.pub-badge.prep { color: var(--ink-4);   border-color: var(--rule); }
-
-.pub-venue {
-  font-family: var(--mono);
-  font-size: 0.54rem;
-  letter-spacing: 0.08em;
-  color: var(--ink-4);
-  text-transform: uppercase;
-}
-
-.pub-body { padding: 2rem 2.5rem; }
-
-.pub-body h3 {
-  font-family: var(--serif);
-  font-size: 1.05rem;
-  font-weight: 400;
-  font-style: italic;
-  color: var(--ink);
-  margin-bottom: 0.3rem;
-  line-height: 1.4;
-}
-
-.pub-authors { font-size: 0.78rem; color: var(--ink-3); margin-bottom: 0.2rem; }
-
-.pub-journal {
-  font-size: 0.78rem;
-  color: var(--ink-4);
-  margin-bottom: 0.8rem;
-}
-
-.pub-abstract {
-  font-size: 0.85rem;
-  color: var(--ink-3);
-  line-height: 1.75;
-  margin-bottom: 0.9rem;
-}
-
-.pub-links { display: flex; gap: 0; }
-
-.pub-link {
-  font-family: var(--mono);
-  font-size: 0.58rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--accent);
-  text-decoration: none;
-  padding: 0.25rem 0.7rem;
-  border: 1px solid rgba(181,69,27,0.25);
-  transition: all 0.18s;
-}
-
-.pub-link + .pub-link { border-left: none; }
-.pub-link:hover { background: var(--accent); color: var(--paper); }
-
-/* ── GITHUB ── */
-.gh-bar {
-  padding: 1.2rem 2.5rem;
-  border-bottom: 1px solid var(--rule-2);
-  background: var(--paper2);
-}
-
-.gh-url {
-  font-family: var(--mono);
-  font-size: 0.78rem;
-  color: var(--accent);
-  text-decoration: none;
-  display: flex; align-items: center; gap: 0.5rem;
-  transition: color 0.18s;
-}
-
-.gh-url:hover { color: var(--ink); }
-
-.repo-grid { display: grid; grid-template-columns: 1fr 1fr; }
-
-.repo-card {
-  padding: 1.8rem 2.2rem;
-  border-right: 1px solid var(--rule-2);
-  border-bottom: 1px solid var(--rule-2);
-  text-decoration: none; display: block;
-  transition: background 0.18s;
-}
-
-.repo-card:nth-child(even) { border-right: none; }
-.repo-card:nth-last-child(-n+2) { border-bottom: none; }
-.repo-card:hover { background: var(--paper2); }
-
-.repo-top { display: flex; align-items: baseline; gap: 0.6rem; margin-bottom: 0.5rem; }
-
-.repo-name {
-  font-family: var(--mono);
-  font-size: 0.8rem;
-  color: var(--accent);
-  font-weight: 400;
-}
-
-.repo-tag {
-  font-family: var(--mono);
-  font-size: 0.52rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  padding: 0.1rem 0.4rem;
-  border: 1px solid var(--rule-2);
-  color: var(--ink-4);
-  border-radius: 1px;
-}
-
-.repo-desc { font-size: 0.82rem; color: var(--ink-3); line-height: 1.65; margin-bottom: 0.6rem; }
-
-.repo-lang {
-  font-family: var(--mono);
-  font-size: 0.6rem;
-  color: var(--ink-4);
-  display: flex; align-items: center; gap: 0.4rem;
-}
-
-.lang-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
-
-/* ── TALKS ── */
-.talk-row {
-  display: grid; grid-template-columns: 88px 1fr 108px;
-  border-bottom: 1px solid var(--rule-2);
-  transition: background 0.18s;
-}
-
-.talk-row:hover { background: var(--paper2); }
-.talk-row:last-child { border-bottom: none; }
-
-.talk-date {
-  font-family: var(--serif);
-  font-size: 0.75rem;
-  font-style: italic;
-  font-weight: 300;
-  color: var(--accent);
-  padding: 1.1rem 1.4rem;
-  border-right: 1px solid var(--rule-2);
-  display: flex; align-items: center;
-  background: var(--paper2);
-}
-
-.talk-content { padding: 1.1rem 2rem; }
-.talk-content h3 { font-size: 0.9rem; font-weight: 400; color: var(--ink); margin-bottom: 0.15rem; line-height: 1.4; }
-.talk-venue { font-size: 0.78rem; color: var(--ink-3); font-style: italic; }
-
-.talk-badge-col {
-  padding: 1.1rem 1.2rem;
-  border-left: 1px solid var(--rule-2);
-  display: flex; align-items: center; justify-content: flex-end;
-  background: var(--paper2);
-}
-
-.tbadge {
-  font-family: var(--mono);
-  font-size: 0.54rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  padding: 0.2rem 0.5rem;
-  border: 1px solid;
-}
-
-.tbadge.invited { color: var(--accent);  border-color: rgba(181,69,27,0.3); }
-.tbadge.talk    { color: var(--ink-2);   border-color: var(--rule-2); }
-.tbadge.chair   { color: var(--ink-3);   border-color: var(--rule); }
-
-/* ── COLLABORATIONS ── */
-.collab-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
-
-.collab-item {
-  padding: 1.8rem 1.5rem;
-  border-right: 1px solid var(--rule-2);
-  transition: background 0.18s;
-}
-
-.collab-item:last-child { border-right: none; }
-.collab-item:hover { background: var(--paper2); }
-
-.collab-name {
-  font-family: var(--serif);
-  font-size: 0.95rem;
-  font-style: italic;
-  font-weight: 300;
-  color: var(--ink);
-  margin-bottom: 0.25rem;
-}
-
-.collab-period {
-  font-family: var(--mono);
-  font-size: 0.58rem;
-  letter-spacing: 0.08em;
-  color: var(--accent);
-  opacity: 0.7;
-}
-
-/* ── OUTREACH ── */
-.outreach-grid {
-  display: grid; grid-template-columns: 1fr 1fr;
-  border-bottom: 1px solid var(--rule-2);
-}
-
-.outreach-item {
-  padding: 2rem 2.5rem;
-  border-right: 1px solid var(--rule-2);
-  border-bottom: 1px solid var(--rule-2);
-  transition: background 0.18s;
-}
-
-.outreach-item:nth-child(even) { border-right: none; }
-.outreach-item:nth-last-child(-n+2) { border-bottom: none; }
-.outreach-item:hover { background: var(--paper2); }
-
-.outreach-item h3 {
-  font-family: var(--serif);
-  font-size: 0.95rem;
-  font-style: italic;
-  font-weight: 300;
-  color: var(--ink);
-  margin-bottom: 0.4rem;
-}
-
-.outreach-item p { font-size: 0.83rem; color: var(--ink-3); line-height: 1.7; }
-
-/* ── BLOG ── */
-.blog-body { padding: 2.5rem; }
-
-.blog-meta {
-  font-family: var(--mono);
-  font-size: 0.58rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--ink-4);
-  margin-bottom: 2rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid var(--rule-2);
-  display: flex; gap: 2rem;
-}
-
-.blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--rule-2); }
-
-.blog-card {
-  padding: 1.8rem;
-  border-right: 1px solid var(--rule-2);
-  text-decoration: none; display: block;
-  transition: background 0.18s;
-}
-
-.blog-card:last-child { border-right: none; }
-.blog-card:hover { background: var(--paper2); }
-
-.blog-card-date {
-  font-family: var(--mono);
-  font-size: 0.58rem;
-  letter-spacing: 0.1em;
-  color: var(--accent);
-  margin-bottom: 0.7rem;
-  opacity: 0.8;
-}
-
-.blog-card h3 {
-  font-family: var(--serif);
-  font-size: 1rem;
-  font-style: italic;
-  font-weight: 300;
-  color: var(--ink);
-  margin-bottom: 0.5rem;
-  line-height: 1.3;
-}
-
-.blog-card p { font-size: 0.8rem; color: var(--ink-3); line-height: 1.65; }
-
-.blog-empty {
-  grid-column: 1/-1;
-  border: 1px dashed var(--rule-2);
-  padding: 3rem;
-  text-align: center;
-  color: var(--ink-4);
-  font-family: var(--mono);
-  font-size: 0.7rem;
-  letter-spacing: 0.08em;
-  line-height: 2;
-  background: var(--paper2);
-}
-
-/* ── CV ── */
-.cv-body {
-  padding: 3rem 2.5rem;
-  display: flex; gap: 3rem; align-items: center;
-  border-bottom: 1px solid var(--rule-2);
-  background: var(--paper2);
-}
-
-.cv-icon {
-  flex-shrink: 0;
-  width: 56px; height: 72px;
-  border: 1px solid var(--rule-2);
-  background: var(--paper);
-  display: flex; align-items: center; justify-content: center;
-  font-family: var(--mono);
-  font-size: 0.58rem;
-  letter-spacing: 0.1em;
-  color: var(--accent);
-}
-
-.cv-text h3 {
-  font-family: var(--serif);
-  font-size: 1.1rem;
-  font-style: italic;
-  font-weight: 300;
-  color: var(--ink);
-  margin-bottom: 0.4rem;
-}
-
-.cv-text p { font-size: 0.85rem; color: var(--ink-3); margin-bottom: 1rem; }
-
-/* ── CONTACT ── */
-.contact-body {
-  padding: 4.5rem 2.5rem;
-  display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
-  border-bottom: 1px solid var(--rule-2);
-}
-
-.contact-left h3 {
-  font-family: var(--serif);
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 300;
-  font-style: italic;
-  color: var(--ink);
-  line-height: 1.1;
-  margin-bottom: 1rem;
-}
-
-.contact-left p { font-size: 0.9rem; color: var(--ink-3); line-height: 1.8; margin-bottom: 1.5rem; }
-
-.contact-email {
-  font-family: var(--mono);
-  font-size: 0.88rem;
-  color: var(--accent);
-  text-decoration: none;
-  display: block; margin-bottom: 1.5rem;
-  transition: color 0.18s;
-  border-left: 2px solid var(--accent);
-  padding-left: 0.8rem;
-}
-
-.contact-email:hover { color: var(--ink); }
-
-.contact-links { display: flex; flex-direction: column; gap: 0; }
-
-.contact-link {
-  font-family: var(--mono);
-  font-size: 0.62rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--ink-3);
-  text-decoration: none;
-  padding: 0.8rem 0;
-  border-bottom: 1px solid var(--rule-2);
-  display: flex; align-items: center; justify-content: space-between;
-  transition: color 0.18s;
-}
-
-.contact-link:first-child { border-top: 1px solid var(--rule-2); }
-.contact-link:hover { color: var(--accent); }
-.contact-link::after { content: '↗'; opacity: 0.5; }
-
-/* ── FOOTER ── */
 footer {
-  max-width: var(--max-w); margin: 0 auto;
-  border-left: 1px solid var(--rule-2);
-  border-right: 1px solid var(--rule-2);
-  padding: 1.5rem 2.5rem;
+  padding: 2rem 0;
+  border-top: 1px solid var(--rule);
   display: flex; justify-content: space-between; align-items: center;
-  background: var(--paper2);
 }
+.foot-l { font-family: var(--serif); font-size: 0.82rem; color: var(--ink-3); }
+.foot-r { font-family: var(--sans); font-size: 0.7rem; color: var(--ink-4);
+  display: flex; gap: 0.8rem; }
+.foot-r a { color: var(--ink-4); text-decoration: none; transition: color 0.15s; }
+.foot-r a:hover { color: var(--accent); }
 
-.foot-l { font-family: var(--sans); font-size: 0.8rem; font-style: italic; color: var(--ink-3); }
-.foot-r { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.1em; color: var(--ink-4); text-transform: uppercase; }
-
-/* ── RESPONSIVE ── */
-@media (max-width: 960px) {
-  #hero { grid-template-columns: 1fr; }
-  .hero-right { min-height: 300px; }
-  .about-body { grid-template-columns: 1fr; }
-  .about-side { border-right: none; border-bottom: 1px solid var(--rule-2); flex-direction: row; flex-wrap: wrap; gap: 1.5rem; }
-  .proj-grid, .outreach-grid { grid-template-columns: 1fr; }
-  .proj-item, .outreach-item { border-right: none; }
-  .aero-cards { grid-template-columns: 1fr; }
-  .aero-card { border-right: none; border-bottom: 1px solid var(--rule-2); }
-  .aero-card:last-child { border-bottom: none; }
-  .repo-grid { grid-template-columns: 1fr; }
-  .repo-card { border-right: none; }
-  .collab-grid { grid-template-columns: 1fr 1fr; }
-  .blog-grid { grid-template-columns: 1fr; }
-  .blog-card { border-right: none; border-bottom: 1px solid var(--rule-2); }
-  .skills-cols { grid-template-columns: 1fr; }
-  .skills-col { border-right: none; border-bottom: 1px solid var(--rule); }
-  .skills-col:last-child { border-bottom: none; }
-  .contact-body { grid-template-columns: 1fr; gap: 2rem; }
-}
-
-@media (max-width: 640px) {
-  .nav-links { display: none; }
-  .sec-hd { grid-template-columns: 56px 1fr; }
-  .pub-entry { grid-template-columns: 1fr; }
-  .pub-meta { border-right: none; border-bottom: 1px solid var(--rule-2); flex-direction: row; gap: 1rem; }
-  .talk-row { grid-template-columns: 68px 1fr; }
-  .talk-badge-col { display: none; }
-  .collab-grid { grid-template-columns: 1fr; }
-  .collab-item { border-right: none; }
+@media (max-width: 700px) {
+  #hero { grid-template-columns: 1fr; min-height: auto;
+    padding-top: calc(var(--nav-h) + 3rem); padding-bottom: 3rem; gap: 2.5rem; }
+  .hero-canvas-wrap { aspect-ratio: 16/9; order: -1; }
+  .nav-links a { padding: 0.3rem 0.5rem; font-size: 0.72rem; }
   footer { flex-direction: column; gap: 0.5rem; text-align: center; }
 }
 </style>
@@ -1007,407 +193,105 @@ footer {
 
 <nav>
   <div class="nav-inner">
-    <a href="#hero" class="nav-logo"><strong>Sumedha</strong> Biswas</a>
+    <a href="index.html" class="nav-logo">Sumedha Biswas</a>
     <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#publications">Papers</a></li>
-      <li><a href="#github">Code</a></li>
-      <li><a href="#talks">Talks</a></li>
-      <li><a href="#blog">Blog</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="about/index.html">About</a></li>
+      <li><a href="research/index.html">Research</a></li>
+      <li><a href="code/index.html">Code</a></li>
+      <li><a href="writing/index.html">Writing</a></li>
+      <li><a href="contact/index.html">Contact</a></li>
     </ul>
   </div>
 </nav>
 
+<div class="wrap">
 <div id="hero">
-  <div class="hero-left">
-    <div class="hero-kicker">Astrophysicist &amp; Aerospace Researcher</div>
-    <h1 class="hero-name">Sumedha<br><em>Biswas</em></h1>
-    <p class="hero-discipline">
-      Multi-Messenger Astronomy &amp; Space Mission Science<br>
-      Astrodynamics &amp; Mission Analysis
-    </p>
-    <p class="hero-body">
-      My PhD research builds the observational and statistical infrastructure to detect and
-      characterise electromagnetic counterparts of gravitational wave events — and to extract
-      cosmological information from them. I am now bringing this toolkit to bear on problems
-      in space systems.
-    </p>
-    <div class="hero-ctas">
-      <a href="#projects" class="btn primary">Projects</a>
-      <a href="files/CV_SumedhaBiswas.pdf" class="btn" download>CV ↓</a>
-      <a href="https://github.com/sumedhabiswas" class="btn" target="_blank">GitHub ↗</a>
+  <div class="hero-text">
+    <p class="hero-eyebrow">PhD Candidate · Radboud University · Defense May 2026</p>
+    <h1>Astrophysicist<br>& space scientist</h1>
+    <div class="hero-bio">
+      <p>My PhD research builds the observational and statistical infrastructure to detect and characterise electromagnetic counterparts of gravitational wave events — and to extract cosmological information from them. I am now bringing this toolkit to bear on problems in space systems.</p>
     </div>
-    <div class="hero-stats">
+    <div class="identity-row">
+      <span class="id-pill hi">Gravitational wave astronomy</span>
+      <span class="id-pill hi">Space systems</span>
+      <span class="id-pill">Science writing</span>
+    </div>
+    <div class="hero-nav">
+      <a href="research/index.html" class="btn primary">Research</a>
+      <a href="about/index.html" class="btn">About</a>
+      <a href="code/index.html" class="btn">Code</a>
+      <a href="writing/index.html" class="btn">Writing</a>
+      <a href="files/CV_academic.pdf" class="btn" download>Academic CV ↓</a>
+      <a href="files/CV_industry.pdf" class="btn" download>Industry CV ↓</a>
+    </div>
+    <div class="stats-row">
       <div class="stat"><span class="stat-n">4</span><span class="stat-l">First-author<br>papers</span></div>
       <div class="stat"><span class="stat-n">7+</span><span class="stat-l">Invited &amp;<br>selected talks</span></div>
       <div class="stat"><span class="stat-n">4</span><span class="stat-l">Major<br>collaborations</span></div>
-      <div class="stat"><span class="stat-n">6</span><span class="stat-l">Years<br>LVK member</span></div>
+      <div class="stat"><span class="stat-n">6 yrs</span><span class="stat-l">LVK<br>member</span></div>
     </div>
   </div>
-  <div class="hero-right">
+
+  <div class="hero-canvas-wrap">
     <canvas id="gw"></canvas>
-    <div class="ann-tl">GW Inspiral<br>Binary merger<br>Quadrupole radiation</div>
-    <div class="ann-br">M₁ · M₂<br>Δt → merger<br>h₊, h×</div>
+    <div class="canvas-caption">
+      GW binary inspiral<br>
+      Quadrupole radiation<br>
+      Peters 1964
+    </div>
   </div>
 </div>
 
-<!-- §01 ABOUT -->
-<section id="about" class="page-col" style="padding:0">
-  <div class="sec-hd">
-    <div class="sec-n">§ 01</div>
-    <div class="sec-t"><h2 class="sec-title">About</h2><span class="sec-sub">Biography &amp; Profile</span></div>
-  </div>
-  <div class="about-body">
-    <div class="about-side">
-      <div class="photo-box">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" opacity="0.35"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-        <span>Photo<br>coming soon</span>
-      </div>
-      <div class="side-links">
-        <a href="/cdn-cgi/l/email-protection#81f2f4ece4e5e9e0afe3e8f2f6e0f2c1f3f4afefed" class="side-link">Email</a>
-        <a href="https://github.com/sumedhabiswas" class="side-link" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/sumedha-biswas" class="side-link" target="_blank">LinkedIn</a>
-        <a href="https://ui.adsabs.harvard.edu/search/q=author%3ABiswas%2C+Sumedha" class="side-link" target="_blank">NASA ADS</a>
-        <a href="https://orcid.org/0000-0002-4812-0440" class="side-link" target="_blank">ORCID</a>
-      </div>
-    </div>
-    <div class="about-main">
-      <p>My research sits at the intersection of gravitational wave physics and time-domain astronomy. I build the observational infrastructure to find electromagnetic counterparts of compact binary mergers — designing follow-up strategies for wide-field surveys like Gaia and BlackGEM, developing statistical methods to identify the host galaxies of binary mergers, and turning those identifications into constraints on the Hubble constant.</p>
-      <p>I helped commission the BlackGEM telescope array at ESO La Silla, Chile, and have been a member of the <strong>LIGO–Virgo–KAGRA Collaboration</strong> since 2019. My work also spans <strong>ESA Gaia DPAC</strong>, the <strong>BlackGEM Consortium</strong>, and <strong>ENGRAVE</strong>.</p>
-      <p>Outside astrophysics, I am working toward a move into space systems. The toolkit of GW data analysis — Bayesian inference, signal processing at the noise floor, large-scale simulation, HPC pipelines — is directly applicable to problems in mission analysis, GNC, and space instrumentation, and I am building hands-on astrodynamics experience to complement it.</p>
-      <div class="skills-block">
-        <div class="skills-block-hd">Technical capabilities</div>
-        <div class="skills-cols">
-          <div class="skills-col"><h4>GW &amp; Astrophysics</h4><ul><li>LALSuite, Bilby</li><li>GW data analysis</li><li>Einstein Toolkit, MESA</li><li>Optical transient pipelines</li><li>Bayesian inference / MCMC</li></ul></div>
-          <div class="skills-col"><h4>Aerospace / Orbital</h4><ul><li>Two-body, n-body dynamics</li><li>Lambert's problem</li><li>Poliastro, GMAT</li><li>Trajectory &amp; mission analysis</li><li>Porkchop plots</li></ul></div>
-          <div class="skills-col"><h4>Computing</h4><ul><li>Python (primary)</li><li>C++, FORTRAN</li><li>HPC / HTCondor</li><li>Unix, LaTeX</li><li>MATLAB, Mathematica</li></ul></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- §02 PROJECTS -->
-<section id="projects" class="page-col" style="padding:0">
-  <div class="sec-hd">
-    <div class="sec-n">§ 02</div>
-    <div class="sec-t"><h2 class="sec-title">Projects</h2><span class="sec-sub">Research · Aerospace</span></div>
-  </div>
-
-  <div class="subsec-bar">
-    <span class="subsec-label" style="color:var(--ink-2)">PhD Research</span>
-    <hr>
-    <span class="subsec-note">Radboud University · 2020–2026</span>
-  </div>
-  <div class="proj-grid">
-    <div class="proj-item"><div class="proj-n">I</div><h3>EM Counterparts of GW Events</h3><p>Designing observing strategies with Gaia (GaiaX) and MeerLICHT/BlackGEM to detect kilonovae and afterglows from LVK binary mergers during O4. Characterised 11,000+ GaiaX transient candidates ahead of O4.</p></div>
-    <div class="proj-item"><div class="proj-n">II</div><h3>Dark Sirens &amp; the Hubble Constant</h3><p>Performance verification for determining H₀ and identifying host galaxies of GW events using WEAVE spectroscopic data. Bayesian statistical framework for dark standard sirens with LVK O4 binary black hole events.</p></div>
-    <div class="proj-item"><div class="proj-n">III</div><h3>Fast X-ray Transients &amp; Magnetars</h3><p>Comparing the volumetric space densities of millisecond-spin magnetars and fast X-ray transients to probe evolutionary channels and common-envelope physics.</p></div>
-    <div class="proj-item"><div class="proj-n">IV</div><h3>Fast X-ray Transients &amp; Dark GRBs</h3><p>Exploring the connection between fast X-ray transients and dark gamma-ray bursts, probing the nature of the progenitor population and the role of dust extinction in obscured transients.</p></div>
-    <div class="proj-item"><div class="proj-n">V</div><h3>Host Galaxies with 3G Detectors</h3><p>Determining the host galaxies of binary black hole mergers using the dramatically improved sky localisation from third-generation GW detector networks (Einstein Telescope, Cosmic Explorer).</p></div>
-  </div>
-
-  <div class="subsec-bar" style="border-top:1px solid var(--rule-2)">
-    <span class="subsec-label" style="color:var(--ink-2)">Masters Research</span>
-    <hr>
-    <span class="subsec-note">Nikhef, Amsterdam · 2019–2020</span>
-  </div>
-  <div class="proj-grid">
-    <div class="proj-item"><div class="proj-n">I</div><h3>Primordial Black Holes in the Lower Mass Gap</h3><p>Distinguishing primordial and astrophysical binary black holes in the lower mass gap using GW parameter estimation, probing dark matter in the form of sub-solar mass compact objects.</p></div>
-    <div class="proj-item"><div class="proj-n">II</div><h3>Sub-Solar Mass GW Searches</h3><p>Improving matched-filter search pipelines for sub-solar mass primordial black holes in LIGO/Virgo data, including template bank design and sensitivity characterisation.</p></div>
-  </div>
-
-  <div class="subsec-bar" style="border-top:1px solid var(--rule-2)">
-    <span class="subsec-label" style="color:var(--ink-2)">Bachelor Projects</span>
-    <hr>
-    <span class="subsec-note">2017–2018</span>
-  </div>
-  <div class="proj-grid">
-    <div class="proj-item"><div class="proj-n">I</div><h3>Binary &amp; White Dwarf Merger Simulations</h3><p>Used numerical relativity tools to determine general solutions of binary black hole and white dwarf mergers. International Centre for Theoretical Sciences (ICTS), Bangalore, Feb–Aug 2018.</p></div>
-    <div class="proj-item"><div class="proj-n">II</div><h3>Three-Body Problem Dynamics</h3><p>Two-body dynamics and simulation of special solutions to the general three-body problem, including restricted and figure-eight solutions. St. Xavier's College, Kolkata, Apr–May 2017.</p></div>
-  </div>
-
-  <div class="subsec-bar" style="border-top:1px solid var(--rule-2)">
-    <span class="subsec-label" style="color:var(--accent)">Aerospace Projects</span>
-    <hr style="border-color:rgba(181,69,27,0.18)">
-    <span class="status-pip"></span>
-    <span class="subsec-note" style="color:rgba(181,69,27,0.6)">Transition in progress</span>
-  </div>
-  <div class="aero-intro-text">
-    I am <strong>actively transitioning from academic astrophysics into the aerospace industry</strong>. The core competencies of GW physics — Bayesian inference, large-scale simulation, signal processing at the noise floor, HPC pipelines — map directly onto mission analysis, GNC, and space instrumentation.
-  </div>
-  <div class="aero-cards">
-    <div class="aero-card">
-      <div class="aero-card-status"><span class="status-pip"></span>In progress</div>
-      <h3>Orbital Mechanics &amp; Trajectory Design</h3>
-      <p>Two-body and n-body propagation, Lambert's problem, porkchop plots for interplanetary transfer windows. Earth–Mars mission analysis.</p>
-      <div class="aero-tags"><span class="aero-tag">Astrodynamics</span><span class="aero-tag">Poliastro</span><span class="aero-tag">Python</span></div>
-    </div>
-    <div class="aero-card" style="opacity:.45;border-style:dashed">
-      <div class="aero-card-status" style="color:var(--ink-4)">Coming soon</div>
-      <h3>Add project here</h3>
-      <p>Update in <code style="font-family:var(--mono);font-size:.8em">index.html</code> → .aero-cards.</p>
-      <div class="aero-tags"><span class="aero-tag">Placeholder</span></div>
-    </div>
-    <div class="aero-card" style="opacity:.45;border-style:dashed">
-      <div class="aero-card-status" style="color:var(--ink-4)">Coming soon</div>
-      <h3>More to follow</h3>
-      <p>GNC, space instrumentation, or mission simulation projects.</p>
-      <div class="aero-tags"><span class="aero-tag">Placeholder</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- §03 PUBLICATIONS -->
-<section id="publications" class="page-col" style="padding:0">
-  <div class="sec-hd">
-    <div class="sec-n">§ 03</div>
-    <div class="sec-t"><h2 class="sec-title">Publications</h2><span class="sec-sub">First-Author · Full list on NASA ADS</span></div>
-  </div>
-
-  <div class="pub-entry">
-    <div class="pub-meta"><div class="pub-year">2023</div><span class="pub-badge pub">Published</span><span class="pub-venue">MNRAS</span></div>
-    <div class="pub-body">
-      <h3>Preparing for Gaia Searches for Optical Counterparts of Gravitational Wave Events during O4</h3>
-      <div class="pub-authors"><strong>S. Biswas</strong>, Z. Kostrzewa-Rutkowska, P. G. Jonker, P. Vreeswijk, D. Eappachen, P. J. Groot, S. Hodgkin et al.</div>
-      <div class="pub-journal">Monthly Notices of the Royal Astronomical Society, 525, 4065–4078</div>
-      <p class="pub-abstract">Preparation for detecting EM counterparts of GW events with Gaia's new GaiaX transient pipeline during LVK O4. A two-month pilot experiment with MeerLICHT characterised 11,861 GaiaX and 15,806 ML candidate transients, establishing false-positive rates and operational readiness.</p>
-      <div class="pub-links"><a href="https://doi.org/10.1093/mnras/stad2547" class="pub-link" target="_blank">DOI</a><a href="https://github.com/sumedhabiswas/gaiax_meerlicht" class="pub-link" target="_blank">Code</a><a href="https://ui.adsabs.harvard.edu/" class="pub-link" target="_blank">ADS</a></div>
-    </div>
-  </div>
-
-  <div class="pub-entry">
-    <div class="pub-meta"><div class="pub-year">2025</div><span class="pub-badge pub">Published</span><span class="pub-venue">A&amp;A</span></div>
-    <div class="pub-body">
-      <h3>Comparing the Space Densities of Millisecond-Spin Magnetars and Fast X-Ray Transients</h3>
-      <div class="pub-authors"><strong>S. Biswas</strong> et al.</div>
-      <div class="pub-journal">Astronomy &amp; Astrophysics, 700, A161</div>
-      <p class="pub-abstract">Local volumetric space densities of millisecond-spin magnetars and fast X-ray transients, probing the common-envelope evolutionary channel and the FXT–dark GRB connection.</p>
-      <div class="pub-links"><a href="https://doi.org/10.1051/0004-6361/202554082" class="pub-link" target="_blank">DOI</a><a href="https://github.com/sumedhabiswas/rate_of_msec_magnetars" class="pub-link" target="_blank">Code</a><a href="https://ui.adsabs.harvard.edu/" class="pub-link" target="_blank">ADS</a></div>
-    </div>
-  </div>
-
-  <div class="pub-entry">
-    <div class="pub-meta"><div class="pub-year">2026</div><span class="pub-badge sub">Submitted</span><span class="pub-venue">MNRAS</span></div>
-    <div class="pub-body">
-      <h3>Identifying Host Galaxies of Binary Black Hole Mergers with Third-Generation Gravitational Wave Detectors</h3>
-      <div class="pub-authors"><strong>S. Biswas</strong> et al.</div>
-      <div class="pub-journal">Submitted to Monthly Notices of the Royal Astronomical Society (2026)</div>
-      <p class="pub-abstract">Statistical framework for identifying host galaxies of BBH mergers exploiting the improved sky localisation from third-generation GW detector networks, enabling cosmological measurements without EM counterparts.</p>
-      <div class="pub-links"><a href="https://github.com/sumedhabiswas/popnet" class="pub-link" target="_blank">Code</a><a href="#" class="pub-link">Preprint</a></div>
-    </div>
-  </div>
-
-  <div class="pub-entry" style="border-bottom:none">
-    <div class="pub-meta"><div class="pub-year">In prep</div><span class="pub-badge prep">In prep</span></div>
-    <div class="pub-body">
-      <h3>Constraining the Hubble Constant with Binary Black Hole Mergers Using WEAVE Spectroscopy</h3>
-      <div class="pub-authors"><strong>S. Biswas</strong> et al.</div>
-      <div class="pub-journal">In preparation</div>
-      <p class="pub-abstract">Dark-siren H₀ measurement using WEAVE spectroscopic redshifts and BBH events from LVK O4, benchmarking the statistical host galaxy method against simulated catalogues.</p>
-      <div class="pub-links"><span style="font-family:var(--mono);font-size:.58rem;color:var(--ink-4);letter-spacing:.08em">Code forthcoming</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- §04 CODE -->
-<section id="github" class="page-col" style="padding:0">
-  <div class="sec-hd">
-    <div class="sec-n">§ 04</div>
-    <div class="sec-t"><h2 class="sec-title">Code</h2><span class="sec-sub">Selected Repositories</span></div>
-  </div>
-  <div class="gh-bar">
-    <a href="https://github.com/sumedhabiswas" class="gh-url" target="_blank">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-      github.com/sumedhabiswas
-    </a>
-  </div>
-  <div class="repo-grid">
-    <a href="https://github.com/sumedhabiswas/popnet" class="repo-card" target="_blank">
-      <div class="repo-top"><span class="repo-name">popnet</span><span class="repo-tag">Research · 2026</span></div>
-      <p class="repo-desc">Host galaxy identification for BBH mergers with third-generation GW detector networks. Statistical framework for dark siren cosmology.</p>
-      <div class="repo-lang"><span class="lang-dot" style="background:#3572A5"></span>Python</div>
-    </a>
-    <a href="https://github.com/sumedhabiswas/rate_of_msec_magnetars" class="repo-card" target="_blank">
-      <div class="repo-top"><span class="repo-name">rate_of_msec_magnetars</span><span class="repo-tag">Research · 2025</span></div>
-      <p class="repo-desc">Space density comparison of millisecond-spin magnetars and fast X-ray transients. Published in A&amp;A 2025.</p>
-      <div class="repo-lang"><span class="lang-dot" style="background:#3572A5"></span>Python</div>
-    </a>
-    <a href="https://github.com/sumedhabiswas/gaiax_meerlicht" class="repo-card" target="_blank">
-      <div class="repo-top"><span class="repo-name">gaiax_meerlicht</span><span class="repo-tag">Research · 2023</span></div>
-      <p class="repo-desc">GaiaX transient pipeline and MeerLICHT cross-matching for GW optical counterpart searches during LVK O4. Published in MNRAS 2023.</p>
-      <div class="repo-lang"><span class="lang-dot" style="background:#3572A5"></span>Python</div>
-    </a>
-    <a href="https://github.com/sumedhabiswas/detecting_PBHs_with_GWs_thesis" class="repo-card" target="_blank">
-      <div class="repo-top"><span class="repo-name">detecting_PBHs_with_GWs_thesis</span><span class="repo-tag">Masters Thesis</span></div>
-      <p class="repo-desc">Masters thesis: distinguishing primordial and astrophysical BBHs in the lower mass gap, and improving sub-solar mass GW searches.</p>
-      <div class="repo-lang"><span class="lang-dot" style="background:#3572A5"></span>Python</div>
-    </a>
-  </div>
-</section>
-
-<!-- §05 TALKS -->
-<section id="talks" class="page-col" style="padding:0">
-  <div class="sec-hd">
-    <div class="sec-n">§ 05</div>
-    <div class="sec-t"><h2 class="sec-title">Talks &amp; Conferences</h2><span class="sec-sub">Selected Presentations</span></div>
-  </div>
-  <div class="talk-row"><div class="talk-date">Mar 2026</div><div class="talk-content"><h3>Indian Institute of Astrophysics Seminar</h3><div class="talk-venue">Bangalore, India</div></div><div class="talk-badge-col"><span class="tbadge invited">Invited</span></div></div>
-  <div class="talk-row"><div class="talk-date">Sep 2025</div><div class="talk-content"><h3>Lorentz Center — Shedding Light on Dark Sirens</h3><div class="talk-venue">Leiden, The Netherlands</div></div><div class="talk-badge-col"><span class="tbadge talk">Talk</span></div></div>
-  <div class="talk-row"><div class="talk-date">Jul 2023</div><div class="talk-content"><h3>European Astronomical Society Annual Meeting</h3><div class="talk-venue">Kraków, Poland</div></div><div class="talk-badge-col"><span class="tbadge chair">Session Chair</span></div></div>
-  <div class="talk-row"><div class="talk-date">Jun 2022</div><div class="talk-content"><h3>GW-EM Workshop, Weizmann Institute of Science</h3><div class="talk-venue">Rehovot, Israel</div></div><div class="talk-badge-col"><span class="tbadge invited">Invited</span></div></div>
-  <div class="talk-row"><div class="talk-date">Nov 2021</div><div class="talk-content"><h3>Gaia Alerts Workshop</h3><div class="talk-venue">Hersonissos, Greece</div></div><div class="talk-badge-col"><span class="tbadge talk">Accepted Talk</span></div></div>
-  <div class="talk-row"><div class="talk-date">Aug 2021</div><div class="talk-content"><h3>ZTF Summer School</h3><div class="talk-venue">Caltech, Pasadena CA</div></div><div class="talk-badge-col"><span class="tbadge chair">Selected</span></div></div>
-  <div class="talk-row"><div class="talk-date">Mar 2020</div><div class="talk-content"><h3>Jürgen Ehlers Spring School</h3><div class="talk-venue">Albert Einstein Institute, Potsdam, Germany</div></div><div class="talk-badge-col"><span class="tbadge invited">Invited</span></div></div>
-</section>
-
-<!-- §06 COLLABORATIONS -->
-<section id="collaborations" class="page-col" style="padding:0">
-  <div class="sec-hd">
-    <div class="sec-n">§ 06</div>
-    <div class="sec-t"><h2 class="sec-title">Collaborations</h2><span class="sec-sub">Scientific Consortia</span></div>
-  </div>
-  <div class="collab-grid">
-    <div class="collab-item"><div class="collab-name">LIGO–Virgo–KAGRA</div><div class="collab-period">Sep 2019 — Present</div></div>
-    <div class="collab-item"><div class="collab-name">ESA Gaia DPAC</div><div class="collab-period">Apr 2021 — Present</div></div>
-    <div class="collab-item"><div class="collab-name">BlackGEM Consortium</div><div class="collab-period">Dec 2020 — Present</div></div>
-    <div class="collab-item"><div class="collab-name">ENGRAVE</div><div class="collab-period">Dec 2020 — Present</div></div>
-  </div>
-</section>
-
-<!-- §07 OUTREACH -->
-<section id="outreach" class="page-col" style="padding:0">
-  <div class="sec-hd">
-    <div class="sec-n">§ 07</div>
-    <div class="sec-t"><h2 class="sec-title">Outreach</h2><span class="sec-sub">Science Communication</span></div>
-  </div>
-  <div class="outreach-grid">
-    <div class="outreach-item"><h3>BlackHoleFinder — Citizen Science App</h3><p>Core development team for the BlackGEM citizen science app, enabling public classification of BlackGEM survey data.</p></div>
-    <div class="outreach-item"><h3>LIGO Open Data Workshops 2020 &amp; 2021</h3><p>Organised and mentored 500+ students at tutorial sessions during the LIGO/Virgo Open Data Workshops.</p></div>
-    <div class="outreach-item"><h3>Quanta Magazine</h3><p>Science writing for Quanta Magazine (2019), communicating frontier physics to a broad science audience.</p></div>
-    <div class="outreach-item"><h3>Public Talks — Naxxatra &amp; JN Planetarium</h3><p>Volunteer public astronomy talks at Naxxatra, and science fairs at Jawaharlal Nehru Planetarium, Bangalore (2015–2018).</p></div>
-  </div>
-</section>
-
-<!-- §09 BLOG -->
-<section id="blog" class="page-col" style="padding:0">
-  <div class="sec-hd">
-    <div class="sec-n">§ 08</div>
-    <div class="sec-t"><h2 class="sec-title">Notes &amp; Writing</h2><span class="sec-sub">Concepts · Papers · Transition Log</span></div>
-  </div>
-  <div class="blog-body">
-    <div class="blog-meta">
-      <span>Source: blog/posts/*.md</span>
-      <span>Build: python generate_blog.py</span>
-    </div>
-    <div class="blog-grid" id="blog-list">
-      <!-- BLOG_START -->
-      <div class="blog-empty">No posts yet.<br>Drop a <code>.md</code> file in <code>blog/posts/</code> and run<br><code>python generate_blog.py</code></div>
-      <!-- BLOG_END -->
-    </div>
-  </div>
-</section>
-
-<!-- §10 CV -->
-<section id="cv" class="page-col" style="padding:0">
-  <div class="sec-hd">
-    <div class="sec-n">§ 09</div>
-    <div class="sec-t"><h2 class="sec-title">CV</h2><span class="sec-sub">Full Academic &amp; Research Record</span></div>
-  </div>
-  <div class="cv-body">
-    <div class="cv-icon">PDF</div>
-    <div class="cv-text">
-      <h3>Download Full CV</h3>
-      <p>Education, publications, talks, teaching, collaborations, and outreach.</p>
-      <a href="files/CV_SumedhaBiswas.pdf" class="btn primary" download>Download PDF ↓</a>
-    </div>
-  </div>
-</section>
-
-<!-- §11 CONTACT -->
-<section id="contact" class="page-col" style="padding:0">
-  <div class="sec-hd">
-    <div class="sec-n">§ 10</div>
-    <div class="sec-t"><h2 class="sec-title">Contact</h2><span class="sec-sub">Open to Postdoc &amp; Industry Roles</span></div>
-  </div>
-  <div class="contact-body">
-    <div class="contact-left">
-      <h3>Let's work<br>together</h3>
-      <p>Open to postdoctoral positions, aerospace industry roles, and collaborative research — particularly at the intersection of precision data analysis and engineering.</p>
-      <a href="/cdn-cgi/l/email-protection#90e3e5fdf5f4f8f1bef2f9e3e7f1e3d0e2e5befefc" class="contact-email"><span class="__cf_email__" data-cfemail="e497918981808c85ca868d97938597a49691ca8a88">[email&#160;protected]</span></a>
-      <a href="files/CV_SumedhaBiswas.pdf" class="btn" download>Download CV ↓</a>
-    </div>
-    <div class="contact-right">
-      <div class="contact-links">
-        <a href="https://github.com/sumedhabiswas" class="contact-link" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/sumedha-biswas" class="contact-link" target="_blank">LinkedIn</a>
-        <a href="https://ui.adsabs.harvard.edu/search/q=author%3ABiswas%2C+Sumedha" class="contact-link" target="_blank">NASA ADS</a>
-        <a href="https://orcid.org/0000-0002-4812-0440" class="contact-link" target="_blank">ORCID</a>
-      </div>
-    </div>
-  </div>
-</section>
-
 <footer>
-  <div class="foot-l">Sumedha Biswas · sumedhabiswas.github.io</div>
-  <div class="foot-r">© 2026</div>
+  <span class="foot-l">© 2026 Sumedha Biswas</span>
+  <div class="foot-r">
+    <a href="https://github.com/sumedhabiswas" target="_blank">GitHub</a>
+    <a href="https://www.linkedin.com/in/sumedha-biswas" target="_blank">LinkedIn</a>
+    <a href="https://ui.adsabs.harvard.edu/search/q=author%3ABiswas%2C+Sumedha" target="_blank">NASA ADS</a>
+    <a href="https://orcid.org/0000-0002-4812-0440" target="_blank">ORCID</a>
+  </div>
 </footer>
+</div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 (function(){
   const canvas=document.getElementById('gw'),ctx=canvas.getContext('2d');
   let W,H,cx,cy,animId,last=null;
-  const CYCLE=14,R0=0.38,R_MERGE=0.028,TRAIL=220;
+  const CYCLE=14,R0=0.38,TRAIL=200;
   const trail1=[],trail2=[],stars=[];
-  let orbitPhase=0,ringPhase=0,prevTau=1;
+  let orbitPhase=0,ringPhase=0;
 
   function resize(){
     W=canvas.width=canvas.offsetWidth;H=canvas.height=canvas.offsetHeight;
     cx=W/2;cy=H/2;stars.length=0;
-    for(let i=0;i<140;i++)stars.push({x:Math.random()*W,y:Math.random()*H,
-      r:Math.random()*.7+.15,a:Math.random()*.35+.06,f:Math.random()*Math.PI*2});
+    for(let i=0;i<100;i++)stars.push({x:Math.random()*W,y:Math.random()*H,
+      r:Math.random()*.65+.12,a:Math.random()*.3+.05,f:Math.random()*Math.PI*2});
   }
 
-  function separation(tau){
-    return Math.min(W,H)/2*R0*Math.pow(Math.max(tau,.001),.25);
-  }
-
-  function drawGrid(){
-    /* subtle warm-tinted grid on dark ink background */
-    ctx.strokeStyle='rgba(247,244,239,0.04)';ctx.lineWidth=.5;
-    for(let x=0;x<W;x+=32){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,H);ctx.stroke()}
-    for(let y=0;y<H;y+=32){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke()}
-  }
+  function sep(tau){return Math.min(W,H)/2*R0*Math.pow(Math.max(tau,.001),.25);}
 
   function drawStars(dt){
-    for(const s of stars){s.f+=dt*.28;
+    for(const s of stars){s.f+=dt*.25;
       const a=s.a*(.5+.5*Math.sin(s.f));
       ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
-      ctx.fillStyle=`rgba(247,244,239,${a})`;ctx.fill();
+      ctx.fillStyle=`rgba(250,249,247,${a})`;ctx.fill();
     }
   }
 
-  /* Quadrupolar strain pattern — warm paper tones on ink background */
-  function drawStrainPattern(phase,amp){
+  function drawStrain(phase,amp){
     if(amp<.01)return;
-    const NRINGS=10,NANGLES=80;
-    const rMin=Math.min(W,H)*.06,rMax=Math.min(W,H)*.48;
-    for(let ri=0;ri<NRINGS;ri++){
-      const frac=ri/NRINGS,r=rMin+frac*(rMax-rMin);
-      const ret=phase-r*.025;
-      const baseA=amp*(1-frac)*.5;
-      if(baseA<.005)continue;
-      for(let ai=0;ai<=NANGLES;ai++){
-        const theta=(ai/NANGLES)*Math.PI*2;
-        const h=Math.cos(2*theta-2*ret);
+    const NR=8,NA=72,rMin=Math.min(W,H)*.07,rMax=Math.min(W,H)*.44;
+    for(let ri=0;ri<NR;ri++){
+      const frac=ri/NR,r=rMin+frac*(rMax-rMin);
+      const ret=phase-r*.025,baseA=amp*(1-frac)*.38;
+      if(baseA<.004)continue;
+      for(let ai=0;ai<=NA;ai++){
+        const theta=(ai/NA)*Math.PI*2,h=Math.cos(2*theta-2*ret);
         if(Math.abs(h)<.08)continue;
-        const a=baseA*Math.abs(h);
-        const x=cx+r*Math.cos(theta),y=cy+r*Math.sin(theta);
-        /* h>0: warm paper; h<0: terracotta accent */
-        ctx.fillStyle=h>0?`rgba(247,244,239,${a})`:`rgba(181,69,27,${a*.7})`;
-        ctx.beginPath();ctx.arc(x,y,Math.max(.8,r*.032),0,Math.PI*2);ctx.fill();
+        const a=baseA*Math.abs(h),x=cx+r*Math.cos(theta),y=cy+r*Math.sin(theta);
+        ctx.fillStyle=h>0?`rgba(250,249,247,${a})`:`rgba(181,69,27,${a*.6})`;
+        ctx.beginPath();ctx.arc(x,y,Math.max(.65,r*.028),0,Math.PI*2);ctx.fill();
       }
     }
   }
@@ -1415,103 +299,82 @@ footer {
   function drawTrail(trail,col){
     if(trail.length<2)return;
     for(let i=1;i<trail.length;i++){
-      const t0=trail[i-1],t1=trail[i];
-      const a=(i/trail.length)*.5;
-      ctx.beginPath();ctx.moveTo(t0.x,t0.y);ctx.lineTo(t1.x,t1.y);
+      const a=(i/trail.length)*.4;
+      ctx.beginPath();ctx.moveTo(trail[i-1].x,trail[i-1].y);ctx.lineTo(trail[i].x,trail[i].y);
       ctx.strokeStyle=`rgba(${col},${a})`;ctx.lineWidth=.8;ctx.stroke();
     }
   }
 
   function drawBody(x,y,col,R){
-    const arm=R*2.2;
-    ctx.strokeStyle=`rgba(${col},.7)`;ctx.lineWidth=.9;
+    const arm=R*2;
+    ctx.strokeStyle=`rgba(${col},.6)`;ctx.lineWidth=.9;
     [[x-arm,y,x-R,y],[x+R,y,x+arm,y],[x,y-arm,x,y-R],[x,y+R,x,y+arm]].forEach(([x1,y1,x2,y2])=>{
       ctx.beginPath();ctx.moveTo(x1,y1);ctx.lineTo(x2,y2);ctx.stroke();
     });
     ctx.beginPath();ctx.arc(x,y,R,0,Math.PI*2);
-    ctx.strokeStyle=`rgba(${col},.88)`;ctx.lineWidth=1;ctx.stroke();
-    ctx.beginPath();ctx.arc(x,y,2.2,0,Math.PI*2);
+    ctx.strokeStyle=`rgba(${col},.82)`;ctx.lineWidth=1;ctx.stroke();
+    ctx.beginPath();ctx.arc(x,y,1.8,0,Math.PI*2);
     ctx.fillStyle=`rgba(${col},1)`;ctx.fill();
   }
 
-  function drawMergerFlash(strength){
-    if(strength<.02)return;
-    const g=ctx.createRadialGradient(cx,cy,0,cx,cy,Math.min(W,H)*.18*strength);
-    g.addColorStop(0,`rgba(247,240,220,${strength*.9})`);
-    g.addColorStop(.35,`rgba(181,69,27,${strength*.45})`);
+  function drawFlash(s){
+    if(s<.02)return;
+    const g=ctx.createRadialGradient(cx,cy,0,cx,cy,Math.min(W,H)*.16*s);
+    g.addColorStop(0,`rgba(255,245,230,${s*.85})`);
+    g.addColorStop(.4,`rgba(181,69,27,${s*.35})`);
     g.addColorStop(1,'rgba(181,69,27,0)');
-    ctx.fillStyle=g;
-    ctx.beginPath();ctx.arc(cx,cy,Math.min(W,H)*.22,0,Math.PI*2);ctx.fill();
+    ctx.fillStyle=g;ctx.beginPath();ctx.arc(cx,cy,Math.min(W,H)*.2,0,Math.PI*2);ctx.fill();
   }
 
   function drawRingdown(rphase,decay){
     if(decay<.02)return;
-    for(let ri=0;ri<8;ri++){
-      const frac=ri/8,r=Math.min(W,H)*.42*(0.1+frac*.9);
-      const h=Math.cos(2*(rphase-r*.03))*decay*(1-frac);
-      const a=Math.abs(h)*.65;
-      if(a<.008)continue;
+    for(let ri=0;ri<6;ri++){
+      const frac=ri/6,r=Math.min(W,H)*.4*(0.12+frac*.88);
+      const h=Math.cos(2*(rphase-r*.03))*decay*(1-frac),a=Math.abs(h)*.55;
+      if(a<.007)continue;
       ctx.beginPath();ctx.arc(cx,cy,r,0,Math.PI*2);
-      ctx.strokeStyle=`rgba(247,244,239,${a})`;ctx.lineWidth=1.2;ctx.stroke();
+      ctx.strokeStyle=`rgba(250,249,247,${a})`;ctx.lineWidth=1;ctx.stroke();
     }
   }
 
   function frame(ts){
     if(!last)last=ts;
     const dt=Math.min((ts-last)/1000,.05);last=ts;
-    const globalT=((ts/1000)%CYCLE)/CYCLE;
-    const INSPIRAL_END=.72,MERGER_END=.78;
-    let tau,phase=orbitPhase,flashAmp=0,rdDecay=0;
-
-    if(globalT<INSPIRAL_END){
-      tau=1-globalT/INSPIRAL_END;
-      const r_norm=separation(tau)/(Math.min(W,H)/2);
-      const omega=.55*Math.pow(r_norm,-1.5);
-      orbitPhase+=omega*dt;phase=orbitPhase;ringPhase=phase;prevTau=tau;
-      if(globalT<.01){trail1.length=0;trail2.length=0;}
-    } else if(globalT<MERGER_END){
-      tau=0;
-      flashAmp=Math.pow(1-(globalT-INSPIRAL_END)/(MERGER_END-INSPIRAL_END),.4);
-      ringPhase+=6*dt;
+    const g=((ts/1000)%CYCLE)/CYCLE,IE=.72,ME=.78;
+    let tau,phase=orbitPhase,flash=0,rd=0;
+    if(g<IE){
+      tau=1-g/IE;
+      const rn=sep(tau)/(Math.min(W,H)/2);
+      orbitPhase+=.55*Math.pow(rn,-1.5)*dt;phase=orbitPhase;ringPhase=phase;
+      if(g<.01){trail1.length=0;trail2.length=0;}
+    } else if(g<ME){
+      tau=0;flash=Math.pow(1-(g-IE)/(ME-IE),.4);ringPhase+=6*dt;
     } else {
-      tau=0;
-      rdDecay=Math.pow(Math.max(1-(globalT-MERGER_END)/(1-MERGER_END),0),2.5);
-      ringPhase+=(3.5+2.5*(1-rdDecay))*dt;
+      tau=0;rd=Math.pow(Math.max(1-(g-ME)/(1-ME),0),2.5);
+      ringPhase+=(3.5+2.5*(1-rd))*dt;
     }
-
-    const r=separation(tau);
-    const bx1=cx+r*Math.cos(phase),by1=cy+r*Math.sin(phase);
+    const r=sep(tau),bx1=cx+r*Math.cos(phase),by1=cy+r*Math.sin(phase);
     const bx2=cx-r*Math.cos(phase),by2=cy-r*Math.sin(phase);
-
     if(tau>0){
       trail1.push({x:bx1,y:by1});trail2.push({x:bx2,y:by2});
       if(trail1.length>TRAIL){trail1.shift();trail2.shift();}
     }
-
     ctx.clearRect(0,0,W,H);
-    drawGrid();drawStars(dt);
-
-    const strainAmp=tau>0?Math.min(1,Math.pow(1-tau,1.2)*2.2):0;
+    drawStars(dt);
+    const sa=tau>0?Math.min(1,Math.pow(1-tau,1.2)*2.2):0;
     if(tau>0){
-      drawStrainPattern(phase,strainAmp);
-      drawTrail(trail1,'247,244,239');
-      drawTrail(trail2,'181,69,27');
-      drawBody(bx1,by1,'247,244,239',7);
-      drawBody(bx2,by2,'181,69,27',7);
+      drawStrain(phase,sa);
+      drawTrail(trail1,'250,249,247');drawTrail(trail2,'181,69,27');
+      drawBody(bx1,by1,'250,249,247',6);drawBody(bx2,by2,'181,69,27',6);
     }
-    if(flashAmp>0)drawMergerFlash(flashAmp);
-    if(rdDecay>0)drawRingdown(ringPhase,rdDecay);
+    if(flash>0)drawFlash(flash);
+    if(rd>0)drawRingdown(ringPhase,rd);
     animId=requestAnimationFrame(frame);
   }
 
   window.addEventListener('resize',()=>{cancelAnimationFrame(animId);resize();animId=requestAnimationFrame(frame)});
   resize();animId=requestAnimationFrame(frame);
 })();
-
-/* Active nav highlighting */
-(function(){
-  const links=document.querySelectorAll('.nav-links a');
-  const obs=new IntersectionObserver(entries=>{
-    entries.forEach(e=>{
-      if(e.isIntersecting)
-        links
+</script>
+</body>
+</html>
